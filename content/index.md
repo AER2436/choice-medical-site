@@ -99,10 +99,10 @@ _Last updated: 11/11/2025
 
 - [[Checklists/Dr Signatures]]  
 - [[Checklists/Group 3 Power Chair Checklist]]  
-- [[Checklists/PAP Device checklist]]  
-- [[Checklists/RAD Device Checklist.pdf]]  
-- [[Checklists/RAD with Backup Checklist.pdf]]  
-- [[Checklists/PAP Supplies Checklist.pdf]]  
+- [[PAP_Device_checklist]]  
+- [[RAD Device Checklist.pdf]]  
+- [[RAD with Backup Checklist.pdf]]  
+- [[PAP_Supplies_Checklist.pdf]]  
 
 ✅ *Use before claim submission or prior auth requests.*  
 
