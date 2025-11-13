@@ -1,3 +1,7 @@
+---
+title: "Choice Medical Helper Site"
+---
+
 # 🏠 Choice Medical Billing & Reimbursement Vault  
 *Your internal hub for DME education, policy, and reference.*  
 _Last updated: 11/11/2025
