@@ -19,7 +19,10 @@ const config: QuartzConfig = {
     baseUrl: "quartz.jzhao.xyz",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
-    linkPrefetch: false
+
+    // 👇 This is the new bit
+    linkPrefetch: false,
+
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
@@ -96,3 +99,4 @@ const config: QuartzConfig = {
 }
 
 export default config
+
