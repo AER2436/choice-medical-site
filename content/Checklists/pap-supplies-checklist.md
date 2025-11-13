@@ -1,8 +1,10 @@
 ---
-title: {{title}}
-tags: [pdf, checklist]
+title: PAP supplies checklist
+tags:
+  - pdf
+  - checklist
 draft: false
-description: {{description}}
+description: Quick checklist to review before billing PAP supplies
 ---
 
 ## What this is
