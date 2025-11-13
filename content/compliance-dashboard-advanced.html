@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Compliance Dashboard – Choice Medical</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #f7f7f9;
+      --card-bg: #ffffff;
+      --border: #d0d0dd;
+      --text: #222222;
+      --muted: #666666;
+      --accent: #284b63;
+      --shadow: rgba(0, 0, 0, 0.06);
+      --active-bg: rgba(0, 128, 0, 0.10);
+      --due-bg: rgba(255, 215, 0, 0.18);
+      --expired-bg: rgba(255, 0, 0, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2.5rem auto;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 1.9rem;
+      color: var(--accent);
+    }
+
+    .subheading {
+      margin: 0.25rem 0 1.25rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fafafa;
+    }
+
+    .pill span.emoji {
+      font-size: 1.05rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.75rem;
+      font-size: 0.92rem;
+    }
+
+    thead {
+      background: #f0f0f5;
+    }
+
+    th,
+    td {
+      padding: 0.55rem 0.6rem;
+      text-align: left;
+      border-bottom: 1px solid #e0e0ea;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    th:nth-child(1),
+    td:nth-child(1) {
+      white-space: normal;
+      min-width: 180px;
+    }
+
+    th:nth-child(4),
+    td:nth-child(4) {
+      text-align: right;
+    }
+
+    th {
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #444a55;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    tr.status-active {
+      background: var(--active-bg);
+    }
+
+    tr.status-due {
+      background: var(--due-bg);
+    }
+
+    tr.status-expired {
+      background: var(--expired-bg);
+    }
+
+    .status-cell {
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .status-active .status-cell {
+      color: #126012;
+    }
+
+    .status-due .status-cell {
+      color: #9b7a00;
+    }
+
+    .status-expired .status-cell {
+      color: #9c1717;
+    }
+
+    .as-of {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .small-note {
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        margin: 0.75rem;
+        padding: 1rem;
+      }
+
+      table {
+        font-size: 0.85rem;
+      }
+
+      th:nth-child(2),
+      th:nth-child(3),
+      td:nth-child(2),
+      td:nth-child(3) {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Compliance Dashboard</h1>
+    <p class="subheading">
+      Auto-updating status based on Expires date. Sorted by soonest expiration.
+    </p>
+    <p class="as-of" id="asOf"></p>
+
+    <div class="legend">
+      <div class="pill">
+        <span class="emoji">✅</span>
+        <span>Active (&gt; 120 days)</span>
+      </div>
+      <div class="pill">
+        <span class="emoji">⚠️</span>
+        <span>Renewal due (0–120 days)</span>
+      </div>
+      <div class="pill">
+        <span class="emoji">❌</span>
+        <span>Expired (&lt; 0 days)</span>
+      </div>
+    </div>
+
+    <table id="complianceTable">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Renewal Date</th>
+          <th>Expires</th>
+          <th>Days Remaining</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- rows will be injected by JS -->
+      </tbody>
+    </table>
+
+    <p class="small-note">
+      Edit dates in the data section of this file. Status, row colors, and sorting
+      are calculated automatically in the browser.
+    </p>
+  </main>
+
+  <script>
+    // ==== CONFIGURABLE DATA ====
+    // Edit this array when a date changes or a new item is added.
+    const complianceItems = [
+      {
+        item: "TMHP Bond",
+        renewal: "2026-02-07",
+        expires: "2026-04-08",
+      },
+      {
+        item: "Medicare Bond",
+        renewal: "2026-05-03",
+        expires: "2026-07-02",
+      },
+      {
+        item: "CEDI",
+        renewal: "2026-07-03",
+        expires: "2026-09-01",
+      },
+      {
+        item: "Liability Insurance",
+        renewal: "2026-07-26",
+        expires: "2026-09-24",
+      },
+      {
+        item: "ATP Wells",
+        renewal: "2026-09-11",
+        expires: "2026-11-10",
+      },
+      {
+        item: "Medical Device License",
+        renewal: "2026-10-17",
+        expires: "2026-12-16",
+      },
+      {
+        item: "HQAA Accreditation",
+        renewal: "2028-04-29",
+        expires: "2028-06-28",
+      },
+      {
+        item: "REVALIDATION",
+        renewal: "2029-08-01",
+        expires: "2029-09-30",
+      },
+      {
+        item: "Texas Sales Tax Permit",
+        renewal: "9999-11-01",
+        expires: "9999-12-31",
+      },
+    ];
+
+    // ==== LOGIC ====
+    (function () {
+      const asOfEl = document.getElementById("asOf");
+      const tableBody = document.querySelector("#complianceTable tbody");
+      if (!tableBody) return;
+
+      const today = new Date();
+      const MS_PER_DAY = 1000 * 60 * 60 * 24;
+
+      // "Status as of" text
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, "0");
+      const dd = String(today.getDate()).padStart(2, "0");
+      if (asOfEl) {
+        asOfEl.textContent = `Status as of ${yyyy}-${mm}-${dd}`;
+      }
+
+      function classify(diffDays) {
+        if (diffDays < 0) {
+          return { label: "❌ Expired", className: "status-expired" };
+        } else if (diffDays <= 120) {
+          return { label: "⚠️ Renewal due", className: "status-due" };
+        } else {
+          return { label: "✅ Active", className: "status-active" };
+        }
+      }
+
+      const rows = complianceItems
+        .map((entry) => {
+          const expiresDate = new Date(entry.expires + "T00:00:00");
+          if (isNaN(expiresDate.getTime())) return null;
+
+          const diffDays = Math.round((expiresDate - today) / MS_PER_DAY);
+          const statusInfo = classify(diffDays);
+
+          return {
+            ...entry,
+            expiresDate,
+            diffDays,
+            statusInfo,
+          };
+        })
+        .filter(Boolean)
+        .sort((a, b) => a.expiresDate - b.expiresDate);
+
+      rows.forEach((entry) => {
+        const tr = document.createElement("tr");
+        tr.classList.add(entry.statusInfo.className);
+
+        const tdItem = document.createElement("td");
+        tdItem.textContent = entry.item;
+
+        const tdRenewal = document.createElement("td");
+        tdRenewal.textContent = entry.renewal;
+
+        const tdExpires = document.createElement("td");
+        tdExpires.textContent = entry.expires;
+
+        const tdDays = document.createElement("td");
+        tdDays.style.textAlign = "right";
+        tdDays.textContent =
+          entry.diffDays < 0
+            ? `${Math.abs(entry.diffDays)} days past`
+            : `${entry.diffDays}`;
+
+        const tdStatus = document.createElement("td");
+        const spanStatus = document.createElement("span");
+        spanStatus.className = "status-cell";
+        spanStatus.textContent = entry.statusInfo.label;
+        tdStatus.appendChild(spanStatus);
+
+        tr.appendChild(tdItem);
+        tr.appendChild(tdRenewal);
+        tr.appendChild(tdExpires);
+        tr.appendChild(tdDays);
+        tr.appendChild(tdStatus);
+
+        tableBody.appendChild(tr);
+      });
+    })();
+  </script>
+</body>
+</html>
