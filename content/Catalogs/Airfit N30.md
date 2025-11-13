@@ -1,4 +1,4 @@
-[[airfit-n30_combined-product-guide_amer_eng.pdf]]
+[AirFit N30 Product Guide (PDF)](PDFs/airfit-n30_combined-product-guide_amer_eng.pdf)
 
 | **Category**              | **Description**                                                                            | **Product Code** |
 | ------------------------- | ------------------------------------------------------------------------------------------ | ---------------- |
