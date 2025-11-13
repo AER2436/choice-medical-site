@@ -19,101 +19,101 @@ BCBS MEDICARE ADVANTAGE:
 #### Employer-offered Plans (28)
 
 
- Blue Access Choice
+- Blue Access Choice
 
- Blue Access PPO (New York)
+- Blue Access PPO (New York)
 
- Blue Alternative
+- Blue Alternative
 
- Blue Choice PPO℠ [BCA]
+- Blue Choice PPO℠ [BCA]
 
- Blue Connect
+- Blue Connect
 
- Blue Open Access POS
+- Blue Open Access POS
 
- Blue Preferred (Oklahoma)
+- Blue Preferred (Oklahoma)
 
- Blue Preferred POS (Missouri)
-
-  
-
- Blue Preferred POS (Wisconsin)
+- Blue Preferred POS (Missouri)
 
   
 
- Blue Priority NY
+- Blue Preferred POS (Wisconsin)
 
   
 
- Blue Priority WI
+- Blue Priority NY
 
   
 
- Blue Value
+- Blue Priority WI
 
   
 
- BlueChoice Advantage Open Access
+-Blue Value
 
   
 
- BlueChoice Open Access POS
+-BlueChoice Advantage Open Access
 
   
 
- Blueprint Health
+-BlueChoice Open Access POS
 
   
 
- CO Pathway
+-Blueprint Health
 
   
 
- Community Blue
+-CO Pathway
 
   
 
- Empire POS
+-Community Blue
 
   
 
- HealthSync
+-Empire POS
 
   
 
- High Value Network
+-HealthSync
 
   
 
- Horizon Managed Care Network
+-High Value Network
 
   
 
- Network Blue
+-Horizon Managed Care Network
 
   
 
- Network S
+-Network Blue
 
   
 
- ParPlan [PAR]
+-Network S
 
   
 
- Preferred Blue Option (Utah)
+-ParPlan [PAR]
 
   
 
- Preferred Care Blue
+-Preferred Blue Option (Utah)
 
   
 
- Premier Select BlueChoice
+-Preferred Care Blue
 
   
 
- Select PPO
+-Premier Select BlueChoice
+
+  
+
+-Select PPO
 
   
 
@@ -123,15 +123,15 @@ BCBS MEDICARE ADVANTAGE:
 
   
 
- 65 Plus Medicare Advantage Plan (PPO)
+-65 Plus Medicare Advantage Plan (PPO)
 
   
 
- Blue Cross Group Medicare Advantage (PPO) Open Access℠
+-Blue Cross Group Medicare Advantage (PPO) Open Access℠
 
   
 
- Blue Cross Group Medicare Advantage (PPO)℠
+-Blue Cross Group Medicare Advantage (PPO)℠
 
   
 
@@ -141,8 +141,8 @@ BCBS MEDICARE ADVANTAGE:
 
   
 
- Blue Cross Medicare Advantage Flex (PPO)℠ and Flex Access (PPO)℠
+-Blue Cross Medicare Advantage Flex (PPO)℠ and Flex Access (PPO)℠
 
   
 
- Blue Cross Medicare Advantage PPO℠
+-Blue Cross Medicare Advantage PPO℠
