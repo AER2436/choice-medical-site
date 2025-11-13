@@ -1,1 +1,2 @@
-![[images/Oxygen Delivery Boundaries.png]]|
+![Oxygen Boundries](images/Oxygen Delivery Boundaries.png)
+
