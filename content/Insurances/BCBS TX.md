@@ -1,5 +1,6 @@
-## BCBS of TEXAS
- -  all claims will go through here, no matter what state they actually are from
+## <span style="color: blue;">BCBS of TEXAS</span>
+
+ -  All claims will go through here, no matter what state they actually are from
 
 -  However prior auths will need to come from the home plan state.
 -  BCBS Federal
@@ -8,10 +9,7 @@
  
 BCBS MEDICARE ADVANTAGE:
 -  PAP and supplies go through Evicore for prior auth
-
-**Clip source:** [Provider Profile](https://my.providerfinderonline.com/profile/f1000645022/240321375/%7B%22radius%22:%2250%22,%22provider_geo%22:%2233.172638,- 97.113411%22,%22search_specialty_id%22:%22275%22,%22client_canonical_id%22:%22400%7CTXB1%7C519196%7Cc9cea48c- 823b- 17ef- 30ee- 4e1dc3b539c2%7C6741a81a- 08f7- a4da- 5906- 96502e5771ce%22,%22state%22:%22TX%22,%22npi_identifier%22:%221821093519%22%7D?ci=TX- UUX&corp_code=TX&network_id=240002020&geo_location=33.21924,- 97.149937&locale=en)
-
-  
+ 
 
 ### **Plans/Networks Accepted**
 
