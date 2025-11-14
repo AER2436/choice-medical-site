@@ -1,2 +1,2 @@
-[Advanced Compliance Dashboard](/compliance-dashboard-advanced.html)
-click
+[Advanced Compliance Dashboard](/static/compliance-dashboard-advanced.html)
+
