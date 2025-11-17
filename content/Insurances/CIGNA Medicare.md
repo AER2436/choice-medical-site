@@ -1,4 +1,4 @@
-Pays 60% of Medicare (unadjusted) Fee schedule. Except for Power mobility which pays at 70%
+Pays 60% of Medicare (unadjusted) Fee schedule. Except for Power mobility (devices,repairs and accessories) which pay at 70%
 
 
 MEDICARE
