@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Days & Refill Tools — Web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+    }
+    body {
+      margin: 0;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
+    .app {
+      background: #ffffff;
+      max-width: 700px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+      padding: 1.75rem;
+      box-sizing: border-box;
+    }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+    .subtitle {
+      margin: 0 0 1.25rem;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #6b7280;
+    }
+    .tabs {
+      display: flex;
+      border-radius: 999px;
+      background: #e5e7eb;
+      padding: 0.25rem;
+      margin-bottom: 1.25rem;
+      gap: 0.25rem;
+    }
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.9rem;
+      border-radius: 999px;
+      cursor: pointer;
+      user-select: none;
+      border: none;
+      background: transparent;
+      color: #4b5563;
+      min-width: 0;
+      white-space: nowrap;
+    }
+    .tab.active {
+      background: #ffffff;
+      color: #111827;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.25);
+      font-weight: 600;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .field {
+      margin-bottom: 0.75rem;
+    }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 0.15rem;
+    }
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      font-size: 0.95rem;
+      padding: 0.45rem 0.6rem;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      box-sizing: border-box;
+    }
+    input:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.3);
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.75rem 0 1rem;
+    }
+    button {
+      border-radius: 999px;
+      border: none;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      background: #2563eb;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+    }
+    button.secondary {
+      background: #e5e7eb;
+      color: #111827;
+    }
+    button.chip {
+      background: #f3f4f6;
+      color: #374151;
+      padding-inline: 0.7rem;
+      font-size: 0.85rem;
+    }
+    button:hover {
+      filter: brightness(0.97);
+    }
+    .result-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+    }
+    .result-label {
+      font-weight: 600;
+    }
+    .result-value {
+      font-size: 1.05rem;
+    }
+    .muted {
+      color: #6b7280;
+      font-size: 0.8rem;
+    }
+    .error {
+      color: #b91c1c;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+    .tip {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-top: 0.5rem;
+    }
+    .footer {
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+    @media (max-width: 480px) {
+      .app {
+        padding: 1.1rem;
+      }
+      .tabs {
+        flex-direction: column;
+        border-radius: 12px;
+      }
+      .tab {
+        border-radius: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <h1>Days & Refill Tools</h1>
+    <p class="subtitle">Days between, add days, and 90-day refill windows — all in your browser.</p>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="between">Days Between</button>
+      <button class="tab" data-tab="add">Add Days</button>
+      <button class="tab" data-tab="refill">Refill Window</button>
+    </div>
+
+    <!-- Days Between Tab -->
+    <div class="tab-content active" id="tab-between">
+      <div id="error-between" class="error" style="display:none;"></div>
+
+      <div class="field">
+        <label for="start-date">Start date (MM/DD/YYYY):</label>
+        <input type="text" id="start-date" placeholder="e.g. 06/23/2025" />
+      </div>
+
+      <div class="field">
+        <label for="end-date">End date (MM/DD/YYYY):</label>
+        <input type="text" id="end-date" placeholder="e.g. 09/21/2025" />
+      </div>
+
+      <div class="actions">
+        <button id="btn-calc-between">Calculate</button>
+        <button class="secondary" id="btn-swap">Swap dates</button>
+        <button class="secondary" id="btn-copy-between">Copy result</button>
+      </div>
+
+      <div class="result-row">
+        <span class="result-label">Days between:</span>
+        <span class="result-value" id="result-between">—</span>
+      </div>
+      <div class="tip">
+        Uses calendar days (includes weekends and holidays).
+      </div>
+    </div>
+
+    <!-- Add Days Tab -->
+    <div class="tab-content" id="tab-add">
+      <div id="error-add" class="error" style="display:none;"></div>
+
+      <div class="field">
+        <label for="base-date">Start date (MM/DD/YYYY):</label>
+        <input type="text" id="base-date" placeholder="e.g. 06/23/2025" />
+      </div>
+
+      <div class="field">
+        <label for="days-to-add">Days to add:</label>
+        <input type="number" id="days-to-add" value="90" step="1" />
+      </div>
+
+      <div class="actions">
+        <button id="btn-calc-add">Calculate</button>
+        <button class="secondary" id="btn-copy-add">Copy result</button>
+      </div>
+
+      <div class="actions" style="margin-top:-0.5rem;">
+        <button class="chip" data-quick="7">+7</button>
+        <button class="chip" data-quick="14">+14</button>
+        <button class="chip" data-quick="30">+30</button>
+        <button class="chip" data-quick="60">+60</button>
+        <button class="chip" data-quick="90">+90</button>
+      </div>
+
+      <div class="result-row">
+        <span class="result-label">Resulting date:</span>
+        <span class="result-value" id="result-add">—</span>
+      </div>
+      <div class="tip">
+        Example: 90 days from 06/23/2025 is 09/21/2025. Uses calendar days.
+      </div>
+    </div>
+
+    <!-- Refill Window Tab -->
+    <div class="tab-content" id="tab-refill">
+      <div id="error-refill" class="error" style="display:none;"></div>
+
+      <div class="field">
+        <label for="refill-last">Last supply date (MM/DD/YYYY):</label>
+        <input type="text" id="refill-last" placeholder="e.g. 06/23/2025" />
+      </div>
+
+      <div class="actions">
+        <button id="btn-refill-calc">Calculate</button>
+        <button class="secondary" id="btn-refill-today">Today</button>
+        <button class="secondary" id="btn-refill-copy">Copy all</button>
+      </div>
+
+      <div class="result-row">
+        <span class="result-label">End of 90-day supply:</span>
+        <span class="result-value" id="refill-supply-end">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">Refill contact allowed:</span>
+        <span class="result-value" id="refill-contact">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">Earliest delivery date:</span>
+        <span class="result-value" id="refill-delivery">—</span>
+      </div>
+
+      <div class="tip">
+        Rule: contact no sooner than 30 days before end of current supply; deliveries no sooner than 10 days before end.
+      </div>
+    </div>
+
+    <div class="footer">
+      All calculations happen in your browser. No data is uploaded anywhere.
+    </div>
+  </div>
+
+  <script>
+    // ---- Date helpers (mirroring your Python logic) ----
+    function normalizeDateString(input) {
+      input = (input || "").trim();
+      if (!input) throw new Error("Date is empty. Please enter a date (MM/DD/YYYY).");
+
+      const digits = input.replace(/\D+/g, "");
+      let mm, dd, yyyy;
+
+      if (digits.length === 8) {
+        mm = digits.slice(0, 2);
+        dd = digits.slice(2, 4);
+        yyyy = digits.slice(4, 8);
+      } else if (digits.length === 6) {
+        mm = digits.slice(0, 2);
+        dd = digits.slice(2, 4);
+        const yy = parseInt(digits.slice(4, 6), 10);
+        yyyy = yy < 70 ? String(2000 + yy) : String(1900 + yy);
+      } else {
+        throw new Error("Please enter date as MM/DD/YYYY (e.g., 06/23/2025) or use 6–8 digits like 06232025.");
+      }
+
+      const month = parseInt(mm, 10);
+      const day = parseInt(dd, 10);
+      const year = parseInt(yyyy, 10);
+
+      const date = new Date(year, month - 1, day);
+      if (
+        date.getFullYear() !== year ||
+        date.getMonth() !== month - 1 ||
+        date.getDate() !== day
+      ) {
+        throw new Error("That date isn't valid. Please use MM/DD/YYYY (e.g., 06/23/2025).");
+      }
+
+      const mmStr = String(month).padStart(2, "0");
+      const ddStr = String(day).padStart(2, "0");
+      return mmStr + "/" + ddStr + "/" + String(year);
+    }
+
+    function parseDate(input) {
+      const formatted = normalizeDateString(input);
+      const [mm, dd, yyyy] = formatted.split("/");
+      const date = new Date(parseInt(yyyy, 10), parseInt(mm, 10) - 1, parseInt(dd, 10));
+      return { date, formatted };
+    }
+
+    function daysBetween(d1, d2) {
+      const msPerDay = 24 * 60 * 60 * 1000;
+      const utc1 = Date.UTC(d1.getFullYear(), d1.getMonth(), d1.getDate());
+      const utc2 = Date.UTC(d2.getFullYear(), d2.getMonth(), d2.getDate());
+      return Math.round((utc2 - utc1) / msPerDay);
+    }
+
+    function addDays(date, n) {
+      const msPerDay = 24 * 60 * 60 * 1000;
+      return new Date(date.getTime() + n * msPerDay);
+    }
+
+    function formatDate(date) {
+      const mm = String(date.getMonth() + 1).padStart(2, "0");
+      const dd = String(date.getDate()).padStart(2, "0");
+      const yyyy = String(date.getFullYear());
+      return mm + "/" + dd + "/" + yyyy;
+    }
+
+    // ---- UI wiring ----
+    const todayStr = formatDate(new Date());
+    document.getElementById("start-date").value = todayStr;
+    document.getElementById("base-date").value = todayStr;
+    document.getElementById("refill-last").value = todayStr;
+
+    // Tabs
+    document.querySelectorAll(".tab").forEach(tab => {
+      tab.addEventListener("click", () => {
+        document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+        document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+        tab.classList.add("active");
+        document.getElementById("tab-" + tab.dataset.tab).classList.add("active");
+      });
+    });
+
+    // Reformat on blur
+    function attachReformat(id) {
+      const el = document.getElementById(id);
+      el.addEventListener("blur", () => {
+        const val = el.value.trim();
+        if (!val) return;
+        try {
+          const { formatted } = parseDate(val);
+          el.value = formatted;
+        } catch (e) {
+          // silent; real errors surface on Calculate
+        }
+      });
+    }
+    attachReformat("start-date");
+    attachReformat("end-date");
+    attachReformat("base-date");
+    attachReformat("refill-last");
+
+    // ---- Days Between ----
+    document.getElementById("btn-calc-between").addEventListener("click", () => {
+      const errorEl = document.getElementById("error-between");
+      errorEl.style.display = "none";
+      errorEl.textContent = "";
+      try {
+        const startVal = document.getElementById("start-date").value;
+        const endVal = document.getElementById("end-date").value;
+        if (!startVal.trim() || !endVal.trim()) {
+          throw new Error("Please enter BOTH start and end dates.");
+        }
+        const p1 = parseDate(startVal);
+        const p2 = parseDate(endVal);
+        document.getElementById("start-date").value = p1.formatted;
+        document.getElementById("end-date").value = p2.formatted;
+
+        const diff = daysBetween(p1.date, p2.date);
+        document.getElementById("result-between").textContent = String(diff);
+      } catch (e) {
+        errorEl.textContent = e.message || String(e);
+        errorEl.style.display = "block";
+        document.getElementById("result-between").textContent = "—";
+      }
+    });
+
+    document.getElementById("btn-swap").addEventListener("click", () => {
+      const sEl = document.getElementById("start-date");
+      const eEl = document.getElementById("end-date");
+      const tmp = sEl.value;
+      sEl.value = eEl.value;
+      eEl.value = tmp;
+    });
+
+    document.getElementById("btn-copy-between").addEventListener("click", async () => {
+      const val = document.getElementById("result-between").textContent.trim();
+      if (!val || val === "—") return;
+      try {
+        await navigator.clipboard.writeText(val);
+        alert("Days between copied to clipboard.");
+      } catch {
+        alert("Could not copy to clipboard in this browser.");
+      }
+    });
+
+    // ---- Add Days ----
+    document.getElementById("btn-calc-add").addEventListener("click", () => {
+      const errorEl = document.getElementById("error-add");
+      errorEl.style.display = "none";
+      errorEl.textContent = "";
+      try {
+        const baseVal = document.getElementById("base-date").value;
+        const nVal = document.getElementById("days-to-add").value;
+        if (!baseVal.trim()) {
+          throw new Error("Please enter a start date.");
+        }
+        const n = parseInt(nVal, 10);
+        if (isNaN(n)) {
+          throw new Error("Days must be a whole number (e.g., 90).");
+        }
+        const p = parseDate(baseVal);
+        document.getElementById("base-date").value = p.formatted;
+
+        const future = addDays(p.date, n);
+        document.getElementById("result-add").textContent = formatDate(future);
+      } catch (e) {
+        errorEl.textContent = e.message || String(e);
+        errorEl.style.display = "block";
+        document.getElementById("result-add").textContent = "—";
+      }
+    });
+
+    document.querySelectorAll("button.chip").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const n = btn.dataset.quick;
+        document.getElementById("days-to-add").value = n;
+      });
+    });
+
+    document.getElementById("btn-copy-add").addEventListener("click", async () => {
+      const val = document.getElementById("result-add").textContent.trim();
+      if (!val || val === "—") return;
+      try {
+        await navigator.clipboard.writeText(val);
+        alert("Date copied to clipboard.");
+      } catch {
+        alert("Could not copy to clipboard in this browser.");
+      }
+    });
+
+    // ---- Refill Window ----
+    document.getElementById("btn-refill-today").addEventListener("click", () => {
+      document.getElementById("refill-last").value = formatDate(new Date());
+    });
+
+    document.getElementById("btn-refill-calc").addEventListener("click", () => {
+      const errorEl = document.getElementById("error-refill");
+      errorEl.style.display = "none";
+      errorEl.textContent = "";
+      try {
+        const baseVal = document.getElementById("refill-last").value;
+        if (!baseVal.trim()) {
+          throw new Error("Please enter a last supply date.");
+        }
+        const p = parseDate(baseVal);
+        document.getElementById("refill-last").value = p.formatted;
+
+        const supplyEnd = addDays(p.date, 90);
+        const contact = addDays(supplyEnd, -30);
+        const delivery = addDays(supplyEnd, -10);
+
+        document.getElementById("refill-supply-end").textContent = formatDate(supplyEnd);
+        document.getElementById("refill-contact").textContent =
+          formatDate(contact) + " (30 days before)";
+        document.getElementById("refill-delivery").textContent =
+          formatDate(delivery) + " (10 days before)";
+      } catch (e) {
+        errorEl.textContent = e.message || String(e);
+        errorEl.style.display = "block";
+        document.getElementById("refill-supply-end").textContent = "—";
+        document.getElementById("refill-contact").textContent = "—";
+        document.getElementById("refill-delivery").textContent = "—";
+      }
+    });
+
+    document.getElementById("btn-refill-copy").addEventListener("click", async () => {
+      const last = document.getElementById("refill-last").value.trim() || "—";
+      const end = document.getElementById("refill-supply-end").textContent.trim() || "—";
+      const contact = document.getElementById("refill-contact").textContent.trim() || "—";
+      const delivery = document.getElementById("refill-delivery").textContent.trim() || "—";
+
+      const text =
+        "Last supply: " + last + "\n" +
+        "End of 90-day supply: " + end + "\n" +
+        "Refill contact allowed: " + contact + "\n" +
+        "Earliest delivery date: " + delivery;
+
+      try {
+        await navigator.clipboard.writeText(text);
+        alert("All dates copied to clipboard.");
+      } catch {
+        alert("Could not copy to clipboard in this browser.");
+      }
+    });
+  </script>
+</body>
+</html>
+
