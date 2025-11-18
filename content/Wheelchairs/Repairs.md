@@ -1,5 +1,5 @@
 ---
-title: Texas Dual-Eligible DME Coinsurance Rules
+title: Repairs-Texas Dual-Eligible DME Coinsurance Rules
 aliases:
   - TX Dual Coinsurance
   - Medicaid Coinsurance Rules (TX)
