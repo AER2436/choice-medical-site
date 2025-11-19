@@ -1,3 +1,10 @@
+---
+title: Chargable Cushion Upgrades
+tags:
+  - cushion
+  - upgrade
+  - charge
+---
 # 💰 Chargeable Cushion Upgrades
 
 > [!info] Scenario
@@ -10,15 +17,20 @@ Before entering items, you must document the **Base Equipment** (the wheelchair)
 
 1. Go to the **Insurance** tab on the Sales Order.
     
-2. Locate the **Claim Note** section (bottom right)2.
+2. Locate the **Claim Note** section (bottom right)
     
-3. Set **Type** to `ADD - Additional Information`3.
+3. Set **Type** to `ADD - Additional Information`
     
-4. Enter the base equipment info (max 80 characters)4.
+4. Enter the base equipment info (max 80 characters)
     
-    - _Format Example:_ `RO K0005 DOP 10/31/2023 KI MOBILITY CATSVX SN CVX01:20086`5.
+    - _Format Example:_ `RO K0005 DOP 10/31/2023 KI MOBILITY CATSVX SN CVX01:20086`
         
 
+<div style="display: flex; justify-content: center;">
+
+![[PDFs/charge1.png|600]]
+
+</div>
 ---
 
 ## Step 2: Line Item Entry (The Math)
@@ -27,13 +39,13 @@ You must enter **two** line items: the item the patient is actually getting (the
 
 ### Line 1: The Upgrade Item (Actual Provide)
 
-- **Item:** Select the actual upgrade cushion being provided7777.
+- **Item:** Select the actual upgrade cushion being provided.
     
 - **Price Type:** Purchase.
     
-- **Allow Field:** Enter the **Upgrade Charge** (Price quoted to patient on ABN)88.
+- **Allow Field:** Enter the **Upgrade Charge** (Price quoted to patient on ABN).
     
-- **Charge Field:** Enter the **Total** (Upgrade Charge + Base Allowable)9999.
+- **Charge Field:** Enter the **Total** (Upgrade Charge + Base Allowable).
     
 - **Modifiers:** `NU`, `GA` (ABN on file).
     
@@ -42,15 +54,15 @@ You must enter **two** line items: the item the patient is actually getting (the
 
 ### Line 2: The Medically Necessary Item (Shadow Bill)
 
-- **Item:** Select the standard cushion code (e.g., E2601)11.
+- **Item:** Select the standard cushion code (e.g., E2601)
     
 - **Price Type:** Purchase.
     
-- **Allow Field:** Enter the **PDAC Allowable** for this code1212.
+- **Allow Field:** Enter the **PDAC Allowable** for this code.
     
-- **Charge Field:** Enter the **PDAC Allowable** (Must match the Allow field)13131313.
+- **Charge Field:** Enter the **PDAC Allowable** (Must match the Allow field).
     
-- **Modifiers:** `NU`, `GK` (Reasonable and necessary item associated with GA), `KX` (Requirements met)14.
+- **Modifiers:** `NU`, `GK` (Reasonable and necessary item associated with GA), `KX` (Requirements met).
     
 
 > [!example] Pricing Example (E2601 Base)
@@ -72,7 +84,7 @@ To ensure the Proof of Delivery (POD) is compliant and clear to the patient, you
 
 Add a note identifying this as the patient election.
 
-- **Text:** `[MANUFACTURER/MODEL] PT ELECT UPGRADE ABN`18.
+- **Text:** `[MANUFACTURER/MODEL] PT ELECT UPGRADE ABN`.
     
     - _Example:_ `KI MOBILITY AXIOM SP XSP1816F PT ELECT UPGRADE ABN`
         
@@ -81,7 +93,7 @@ Add a note identifying this as the patient election.
 
 Add a note clarifying this is the billing reference only.
 
-- **Text:** `MEDICALLY NECESSARY CUSHION`19.
+- **Text:** `MEDICALLY NECESSARY CUSHION`.
     
 
 > [!warning] PDAC Compliance

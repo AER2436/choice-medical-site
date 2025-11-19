@@ -1,3 +1,10 @@
+---
+title: Free Cushion Upgrades
+tags:
+  - cushion
+  - free
+  - upgrade
+---
 # 🪑 Medicare Cheat Sheet — **Free Upgrade Cushions**
 
 Use this when a **free upgrade cushion** is provided to a Medicare beneficiary (no patient charge).

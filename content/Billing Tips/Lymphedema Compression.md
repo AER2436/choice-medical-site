@@ -1,3 +1,9 @@
+---
+title: Lymphedema Compression
+aliases:
+  - Edema
+  - Stockings
+---
 # Lymphedema Compression Treatment Items – Correct Coding and Billing – Revised
 
 **Joint DME MAC Publication**

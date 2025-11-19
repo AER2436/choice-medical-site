@@ -1,3 +1,6 @@
+> [!warning] Obsolete. Qualifications now rely on [[Wheelchair Seating Update|documentation]]
+
+
 [[Cushions]]
 
 

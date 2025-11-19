@@ -1,3 +1,6 @@
+> [!warning] Obsolete. Qualifications now rely on documentation
+
+
 E2603, E2604, E2622, E2623 
 >one code from [[Group 1]] or [[Group 2]]
 
