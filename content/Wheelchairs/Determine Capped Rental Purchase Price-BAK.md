@@ -1,3 +1,8 @@
+---
+draft: true
+---
+
+
 - Purchase Allowable for the Power Base is the rental (RR) amount listed in the fee schedule divided by .15
 - Purchase Allowable for the Capped Rental Accessories is the rental (RR) amount listed in the Fee Schedule x 10
 - Total Allowable for Rental ONLY Capped Rental Power Bases is the rental (RR) amount divided by .15 x 1.05
