@@ -7,6 +7,18 @@ tags:
 ---
 # 💰 Chargeable Cushion Upgrades
 
+### ✅ Checklist
+
+- [ ] ABN signed by patient?
+    
+- [ ] Claim Note added with Base Equipment info?
+    
+- [ ] Line 1 (Upgrade) has `GA` modifier?
+    
+- [ ] Line 2 (Base) has `GK` modifier?
+    
+- [ ] POD notes added to both lines?
+
 > [!info] Scenario
 > 
 > Use this workflow when a patient wants a specific cushion that is not medically necessary (or is an upgrade to the covered item) and they have signed an ABN agreeing to pay the difference.
@@ -28,7 +40,7 @@ Before entering items, you must document the **Base Equipment** (the wheelchair)
 
 <div style="display: flex; justify-content: center;">
 
-![[PDFs/charge1.png|600]]
+![[charge1 1.png|600]]
 
 </div>
 ---
@@ -75,6 +87,11 @@ You must enter **two** line items: the item the patient is actually getting (the
 > |**2**|**Base (Shadow)**|**$71.92**|**$71.92**|**NU GK KX**|
 
 ---
+<div style="display: flex; justify-content: center;">
+
+![[charge2.png|600]]
+
+</div>
 
 ## Step 3: POD & Item Notes
 
@@ -95,6 +112,11 @@ Add a note clarifying this is the billing reference only.
 
 - **Text:** `MEDICALLY NECESSARY CUSHION`.
     
+<div style="display: flex; justify-content: center;">
+
+![[charge3.png|600]]
+
+</div>
 
 > [!warning] PDAC Compliance
 > 
@@ -102,14 +124,3 @@ Add a note clarifying this is the billing reference only.
 
 ---
 
-### ✅ Checklist
-
-- [ ] ABN signed by patient?
-    
-- [ ] Claim Note added with Base Equipment info?
-    
-- [ ] Line 1 (Upgrade) has `GA` modifier?
-    
-- [ ] Line 2 (Base) has `GK` modifier?
-    
-- [ ] POD notes added to both lines?

@@ -74,3 +74,28 @@ Use this when a **free upgrade cushion** is provided to a Medicare beneficiary (
 
 > [!info]
 > Reference: [Noridian Upgrades Policy (Jurisdiction C)](https://med.noridianmedicare.com/web/jddme/topics/upgrades?utm_source=chatgpt.com)
+
+
+## STEPS
+<div style="display: flex; justify-content: center;">
+
+![[Free Upgrade Cushion Billing to Medicare_page-0001.jpg|600]]
+
+</div>
+
+<div style="display: flex; justify-content: center;">
+
+![[Free Upgrade Cushion Billing to Medicare_page-0002.jpg|600]]
+
+</div>
+
+<div style="display: flex; justify-content: center;">
+
+![[Free Upgrade Cushion Billing to Medicare_page-0003.jpg|600]]
+
+</div>
+<div style="display: flex; justify-content: center;">
+
+![[Free Upgrade Cushion Billing to Medicare_page-0004.jpg|600]]
+
+</div>
