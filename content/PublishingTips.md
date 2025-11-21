@@ -77,6 +77,14 @@ Use simple filenames: `2025-11-13.md`
 * Disable “Automatically update internal links.”
 
 ---
+This will resize and center an image:
 
+```html
+<div style="display: flex; justify-content: center;">
+
+![[Your-Image-Name.png|600]]
+
+ </div>
+ ```
 
 
