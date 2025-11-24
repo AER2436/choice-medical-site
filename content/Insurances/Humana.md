@@ -1,4 +1,4 @@
-  
+  ## **DOES NOT APPLY TO PPO PLANS - ONLY HMO**
 
 5/11/23
 
@@ -18,7 +18,7 @@ The move also exemplifies the company’s intent to create a more unified approa
 
 Humana and the national DME organizations are in the process of communicating this transition to Humana Medicare Advantage HMO members. The DME organizations will also begin directly contacting members who currently receive DME services to ensure all medical equipment needs are cared for once the new contracts take effect.
 
-This move to national-level, strategic DME partnerships only pertains to Humana Medicare Advantage HMO plans. It does not pertain to Humana Medicare Advantage members enrolled in PPO or private fee-for-service (PFFS) plans, or Humana’s Medicaid, Commercial or TRICARE lines of business.
+This move to national-level, strategic DME partnerships only pertains to Humana Medicare Advantage HMO plans. **It does not pertain to Humana Medicare Advantage members enrolled in PPO or private fee-for-service (PFFS) plans, or Humana’s Medicaid, Commercial or TRICARE lines of business.**
 
 Terms of the DME provider contracts were not disclosed.
 
