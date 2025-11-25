@@ -89,3 +89,8 @@ Medicare pays: **$299.82**
     
 
 ---
+## **MSP Rule: When Primary Covers Medicare’s 80%**
+
+- **If the primary insurance pays an amount that meets or exceeds Medicare’s 80% of the Medicare allowable, then Medicare pays $0 and the patient owes $0.**
+    
+- **Any patient responsibility assigned by the primary (deductible, copay, coinsurance) must be written off — you cannot bill or collect it.**
