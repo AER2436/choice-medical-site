@@ -7,10 +7,11 @@ title: "Choice Medical Helper Site"
 _Last updated: 11/11/2025
 
 
-<div class="daily-tip">
+<div id="daily-tip" class="daily-tip">
   <strong>Daily Tip:</strong>
   <span id="daily-tip-text"></span>
 </div>
+
 
 
 ---
