@@ -81,8 +81,6 @@ const config: QuartzConfig = {
     emitters: [
   Plugin.AliasRedirects(),
   Plugin.ComponentResources({
-    js: ["./assets/script.js"],
-  }),
   Plugin.ContentPage(),
   Plugin.FolderPage(),
   Plugin.TagPage(),
