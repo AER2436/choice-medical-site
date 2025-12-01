@@ -17,13 +17,10 @@ const config: QuartzConfig = {
     },
     locale: "en-US",
     baseUrl: "quartz.jzhao.xyz",
-
-    // Hide internal stuff
     ignorePatterns: ["private", "templates", ".obsidian", "static"],
-
     defaultDateType: "modified",
 
-    // no prefetch to keep things simple
+    // 👇 This is the new bit
     linkPrefetch: false,
 
     theme: {
@@ -60,7 +57,6 @@ const config: QuartzConfig = {
       },
     },
   },
-
   plugins: {
     transformers: [
       Plugin.FrontMatter(),
@@ -81,14 +77,12 @@ const config: QuartzConfig = {
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
     ],
-
     filters: [Plugin.RemoveDrafts()],
-
     emitters: [
       Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
       Plugin.ContentPage(),
-      Plugin.FolderPage(), // uses default sorting for folder index pages
+      Plugin.FolderPage(),
       Plugin.TagPage(),
       Plugin.ContentIndex({
         enableSiteMap: true,
@@ -98,6 +92,7 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
+      // Comment out CustomOgImages to speed up build time
       Plugin.CustomOgImages(),
     ],
   },
