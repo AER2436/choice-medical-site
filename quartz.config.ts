@@ -18,11 +18,12 @@ const config: QuartzConfig = {
     locale: "en-US",
     baseUrl: "quartz.jzhao.xyz",
 
-    // Hide unwanted folders
+    // Hide internal stuff
     ignorePatterns: ["private", "templates", ".obsidian", "static"],
 
     defaultDateType: "modified",
 
+    // no prefetch to keep things simple
     linkPrefetch: false,
 
     theme: {
@@ -86,52 +87,8 @@ const config: QuartzConfig = {
     emitters: [
       Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
-
-      Plugin.ContentPage({
-        // optional: honor manual `nav_order` if you ever add it to notes
-        sortFn: (a, b) => {
-          const getOrder = (f: any) => f.frontmatter?.nav_order ?? 9999
-          const diff = getOrder(a) - getOrder(b)
-          if (diff !== 0) return diff
-          return (b.dates?.modified ?? 0) - (a.dates?.modified ?? 0)
-        },
-      }),
-
-      Plugin.FolderPage({
-        folderNameOverrides: {
-          "Recertification_Revalidation": "Recertification & Revalidation",
-        },
-
-        // Top-level folder sort control
-        sortFn: (a, b) => {
-          const order = [
-            "Choice Medical",
-            "Billing Tips",
-            "Insurances",
-            "Checklists",
-            "Catalogs",
-            "PAP",
-            "Oxygen",
-            "Wheelchairs",
-            "Recertification_Revalidation",
-            "Clippings",
-          ]
-
-          const aIndex = order.indexOf(a.name)
-          const bIndex = order.indexOf(b.name)
-
-          // both defined → use custom ordering
-          if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex
-          // only A in custom list
-          if (aIndex !== -1) return -1
-          // only B in custom list
-          if (bIndex !== -1) return 1
-
-          // fallback alphabetical
-          return a.name.localeCompare(b.name)
-        },
-      }),
-
+      Plugin.ContentPage(),
+      Plugin.FolderPage(), // uses default sorting for folder index pages
       Plugin.TagPage(),
       Plugin.ContentIndex({
         enableSiteMap: true,
@@ -141,7 +98,7 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      Plugin.CustomOgImages(), // optional, slow but works fine
+      Plugin.CustomOgImages(),
     ],
   },
 }
