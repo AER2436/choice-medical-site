@@ -1,9 +1,10 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
-import type { Options as ExplorerOptions } from "./quartz/components/Explorer"
 
 // ---- Custom Explorer sort function ----
-const explorerSortFn: ExplorerOptions["sortFn"] = (a, b) => {
+// Quartz uses `file === null` => folder, `file !== null` => file
+// https://quartz.jzhao.xyz/features/explorer
+const explorerSortFn = (a: any, b: any) => {
   // Custom order for top-level folders (by displayName)
   const folderOrder: Record<string, number> = {
     "Choice Medical": 10,
@@ -18,30 +19,29 @@ const explorerSortFn: ExplorerOptions["sortFn"] = (a, b) => {
     "Clippings": 100,
   }
 
-  const getFolderRank = (node: any): number => {
-    if (!node.isFolder) return 1_000_000 // files always after folders
-    const name = node.displayName ?? ""
-    return folderOrder[name] ?? 9_999 // anything not listed goes after your custom ones
+  const isFolderA = a.file == null
+  const isFolderB = b.file == null
+
+  const getRank = (node: any): number => {
+    if (node.file == null) {
+      const name = node.displayName ?? node.name ?? ""
+      return folderOrder[name] ?? 9999 // folders not in list go after your custom ones
+    }
+    // files always after folders
+    return 1_000_000
   }
 
-  // If both are folders: use rank, then alphabetical as tiebreaker
-  if (a.isFolder && b.isFolder) {
-    const rankDiff = getFolderRank(a) - getFolderRank(b)
-    if (rankDiff !== 0) return rankDiff
+  // Put folders (ranked) before files
+  const rankDiff = getRank(a) - getRank(b)
+  if (rankDiff !== 0) return rankDiff
 
-    const nameA = (a.displayName ?? "").toLowerCase()
-    const nameB = (b.displayName ?? "").toLowerCase()
-    return nameA.localeCompare(nameB, undefined, { numeric: true, sensitivity: "base" })
-  }
-
-  // If one is folder and one is file: folders first
-  if (a.isFolder && !b.isFolder) return -1
-  if (!a.isFolder && b.isFolder) return 1
-
-  // Both files: alphabetical by displayName
-  const nameA = (a.displayName ?? "").toLowerCase()
-  const nameB = (b.displayName ?? "").toLowerCase()
-  return nameA.localeCompare(nameB, undefined, { numeric: true, sensitivity: "base" })
+  // Same rank → alphabetical by displayName
+  const nameA = (a.displayName ?? a.name ?? "").toLowerCase()
+  const nameB = (b.displayName ?? b.name ?? "").toLowerCase()
+  return nameA.localeCompare(nameB, undefined, {
+    numeric: true,
+    sensitivity: "base",
+  })
 }
 
 // components shared across all pages
