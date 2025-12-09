@@ -70,7 +70,8 @@ _Last updated: 11/26/2025
 - [[Wheelchairs/Power Wheelchairs that need Prior Authorization]]  
 - [[Wheelchairs/New HCPCS for wheelchair accessories (E1028)]]  
 - [[Wheelchairs/Wheelchair Cushion Dx codes]]  
-- [[Wheelchairs/Possible HCPCs for transit systems]]  
+- [[Wheelchairs/Possible HCPCs for transit systems]]
+- [[Chargers]]
 
 ---
 
