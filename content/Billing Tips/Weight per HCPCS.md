@@ -1,8 +1,8 @@
 ---
 title: Weight per HCPCS
 ---
-
-# Manual Wheelchairs
+# _Weight per HCPCS_
+## Manual Wheelchairs
 
 | Patient Weight | HCPCS Code | Description                 |
 | -------------- | ---------- | --------------------------- |
@@ -11,7 +11,7 @@ title: Weight per HCPCS
 | 301 >          | K0007      | Extra Heavy Duty wheelchair |
 
 ---
-# Walkers
+## Walkers
 
 | Patient Weight | HCPCS Code         | Description |
 |----------------|--------------------|-------------|
@@ -20,7 +20,7 @@ title: Weight per HCPCS
 
 ---
 
-# Commodes
+## Commodes
 
 | Patient Weight | HCPCS Code    | Description              |
 | -------------- | ------------- | ------------------------ |
