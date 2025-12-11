@@ -19,6 +19,7 @@ _Last updated: 11/26/2025
 - [🧠 Myth Busters](#-myth-busters) - Fast billing myths
 - [🔍 References & Manuals](#-references--manuals) - Medicare manuals, LCDs
 - 🎁 [[Holidays 2025]] - 2025 Holidays
+- 💲 [[Medicare]] - 2026 Medicare Deductible ($283)
 
 
 ---
@@ -113,15 +114,16 @@ _Last updated: 11/26/2025
 ## 🏢 Insurance / Payer References  
 > Allowables, modifiers, and plan-specific quirks.  
 
-- [[Insurances/BCBS TX]]  
-- [[Insurances/BCBS OK IFM plan]]  
-- [[Insurances/CIGNA Medicare]]  
-- [[Insurances/Humana]]  
-- [[Insurances/Medigap Plans]]  
-- [[Insurances/TriWest]]  
-- [[Insurances/UHC United Healthcare Recovery Code]]  
-- [[Insurances/WEBTPA]]  
-- [[Insurances/Wellpoint (was Amerigroup)]]  
+- [[BCBS TX]]  
+- [[BCBS OK IFM plan]]  
+- [[CIGNA Medicare]]  
+- [[Humana]]  
+- [[Medicare]]
+- [[Medigap Plans]]  
+- [[TriWest]]  
+- [[UHC United Healthcare Recovery Code]]  
+- [[WEBTPA]]  
+- [[Wellpoint (was Amerigroup)]]  
 
 
 ---
