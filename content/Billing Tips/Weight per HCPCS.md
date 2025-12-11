@@ -1,3 +1,7 @@
+---
+title: Weight per HCPCS
+---
+
 # Manual Wheelchairs
 
 | Patient Weight | HCPCS Code | Description                 |
