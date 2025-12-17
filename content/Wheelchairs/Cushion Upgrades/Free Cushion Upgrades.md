@@ -13,14 +13,15 @@ Use this when a **free upgrade cushion** is provided to a Medicare beneficiary (
 
 ## ⚡ QUICK STEPS
 
-| Step | Task | What to Do | Where |
-|------|------|------------|-------|
-| **1** | Add Free Upgrade Item | Enter the upgrade cushion (E2607, etc.) so it prints on the POD. Include **make/model** and note what it’s a free upgrade *from.* | Items Tab |
-| **2** | Add Note | Note example: “**Free upgrade from E2601**” | Item Note |
-| **3** | Add Medically Necessary Cushion | Bill the **covered cushion** (E2601) as normal. | Items Tab |
-| **4** | Apply Modifiers | Add required modifiers (see list below). | Claim Line |
-| **5** | Add Claim Narrative | Enter “**Free upgrade to E2607**” to explain higher-level item. | Claim Line |
-| **6** | Review POD | POD must show both cushions (upgrade + medically necessary). | POD Tab |
+| Step  | Task                            | What to Do                                                                                                                        | Where      |
+| ----- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **1** | Add Free Upgrade Item           | Enter the upgrade cushion (E2607, etc.) so it prints on the POD. Include **make/model** and note what it’s a free upgrade *from.* | Items Tab  |
+| **2** | Add Note                        | Note example: “**Free upgrade from E2601**”                                                                                       | Item Note  |
+| **3** | Remove insurance                | Remove insurance from free item and zero out the charge and allowable.                                                            | Item       |
+| **4** | Add Medically Necessary Cushion | Bill the **covered cushion** (E2601) as normal.                                                                                   | Items Tab  |
+| **5** | Apply Modifiers                 | Add required modifiers (see list below).                                                                                          | Claim Line |
+| **6** | Add Claim Narrative             | Enter “**Free upgrade to E2607**” to explain higher-level item.                                                                   | Claim Line |
+| **7** | Review POD                      | POD must show both cushions (upgrade + medically necessary).                                                                      | POD Tab    |
 
 ---
 
@@ -61,6 +62,7 @@ Use this when a **free upgrade cushion** is provided to a Medicare beneficiary (
 
 - [ ] Free upgrade item listed in Sales Order  
 - [ ] “Free upgrade from [HCPCS code]” in item note  
+- [ ] Free item has insurance removed and Charge/Allowable "zero'd out"
 - [ ] GL modifier added to medically necessary cushion line  
 - [ ] Claim narrative entered  
 - [ ] KU used only if base is CRT MWC or Group 3 PWC  
