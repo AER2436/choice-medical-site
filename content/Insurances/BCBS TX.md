@@ -7,9 +7,12 @@
 -  IF STANDARD OR BASIC  -  BCBS FED WILL PAY MEDICARE DED AND CO- INSURANCE WITH NO OOP TO PATIENT
 -  IF FOCUS -  MEMBER MUST PAY BCBS FED'S DEDUCTIBLE BEFORE BCBS FED WILL PAY MEDICARE CO- INSURANCE AND DED,
  
-BCBS MEDICARE ADVANTAGE:
--  PAP and supplies go through Evicore for prior auth
+  **Healthselect**
+  - (not confirmed,but suspected) Appears to pay Medicare co-insurance, no matter what availity says the deductible and out of pocket is. It will not pay the Medicare deductible, however. So pretty much a **Plan G** when second to Medicare.
  
+**BCBS MEDICARE ADVANTAGE:**
+-  ~~PAP and supplies go through Evicore for prior auth~~
+ - (Update 2026) It appears CPAP supplies have been removed from prior auth list
 
 ### **Plans/Networks Accepted**
 
