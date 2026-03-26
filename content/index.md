@@ -10,6 +10,7 @@ _Last updated: 11/26/2025
 ---
 
 ## ⚡ Quick Navigation  
+- * 💲 [Fee Schedule Calculator](https://choice-medical-site.pages.dev/Fee-Calculator)
 - [💬 Billing Tips](#-billing-tips) - ABNs, SNFs, narratives
 - [🦽 Wheelchairs & Mobility](#-wheelchairs--mobility) - Cushion upgrades, modifiers
 - [💨 PAP / Sleep](#-pap--sleep) - PAP billing & documentation
