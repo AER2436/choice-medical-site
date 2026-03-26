@@ -10,7 +10,7 @@ _Last updated: 3/26/2026
 ---
 
 ## ⚡ Quick Navigation  
-- 💲 [Fee Schedule Calculator](https://choice-medical-site.pages.dev/Fee-Calculator)
+- 💲 [Fee Schedule Calculator]([https://choice-medical-site.pages.dev/Fee-Calculator](https://aer2436.github.io/hcpcs/))
 - [💬 Billing Tips](#-billing-tips) - ABNs, SNFs, narratives
 - [🦽 Wheelchairs & Mobility](#-wheelchairs--mobility) - Cushion upgrades, modifiers
 - [💨 PAP / Sleep](#-pap--sleep) - PAP billing & documentation
