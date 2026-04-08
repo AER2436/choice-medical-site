@@ -41,3 +41,21 @@ The logic: the ordering practitioner cannot order an item before having all docu
 ---
 
 ## Summary Flow
+
+**Face-to-face encounter**
+↓
+**LCMP evaluation** (if applicable) — must finish within 6 months of face-to-face
+↓
+**SWO written for PMD base** — must be written within 6 months of face-to-face
+↓
+**Detailed SWO** (accessories) — same day or after base SWO
+↓
+**Prior authorization obtained** (required for all PMDs)
+↓
+**Delivery** — within 6 months of prior auth letter (PMDs) or 1 year of SWO (manual WC)
+
+
+---
+
+## Tags
+`billing` `PMD` `power-wheelchair` `SWO` `face-to-face` `LCMP` `prior-auth` `ADMC` `documentation` `complex-rehab`
