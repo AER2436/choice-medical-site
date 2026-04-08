@@ -61,7 +61,7 @@ _Last updated: 3/26/2026
 ### Upgrades  
 - [[Chargeable Cushion Upgrades]]  
 - [[Wheelchairs/Cushion Upgrades/Free Cushion Upgrades]]  
-- [[Wheelchairs/Determine Capped Rental Only vs Capped Rental First Month-BAK]]  
+- [[Wheelchairs/# Wheelchairs, Scooters & Accessories — Purchase vs. Rental]]  
 - [[Wheelchairs/Determine Capped Rental Purchase Price-BAK]]  
 - [[Wheelchairs/Determining Capped Rental vs. First Month Purchase & Purchase Price]]  
 
