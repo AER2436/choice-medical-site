@@ -10,13 +10,13 @@ const config: QuartzConfig = {
   configuration: {
     pageTitle: "Choice Medical",
     pageTitleSuffix: "",
-    enableSPA: true,
+    enableSPA: false,
     enablePopovers: false,
     analytics: {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "192.168.254.18/ops",
     ignorePatterns: ["private", "templates", ".obsidian", "static"],
     defaultDateType: "modified",
 

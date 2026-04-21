@@ -4,3 +4,13 @@ table tr:nth-child(even) {
 }
 
 // put your custom CSS here!
+// Make sidebar bookmark links more distinct
+.explorer ul li {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  padding: 4px 0;
+  line-height: 1.5;
+}
+
+.explorer ul li:last-child {
+  border-bottom: none;
+}
