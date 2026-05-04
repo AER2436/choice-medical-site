@@ -5,12 +5,12 @@ table tr:nth-child(even) {
 
 // put your custom CSS here!
 // Make sidebar bookmark links more distinct
-.explorer ul li {
-  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
-  padding: 4px 0;
-  line-height: 1.5;
+// Separate explorer file links
+.explorer .content li {
+  border-bottom: 1px solid var(--lightgray);
+  padding: 3px 0;
 }
 
-.explorer ul li:last-child {
+.explorer .content li:last-child {
   border-bottom: none;
 }

@@ -1,0 +1,17 @@
+- A7030 Full Face Mask / Frame 1 every 3 months
+- A7031 Full Face Cushion 1 every month
+- A7032 Nasal Cushion 2 every month
+- A7033 Nasal Pillow 2 every month
+- A7034 Nasal Mask / Frame 1 every 3 months
+- A7037 Standard Tubing 1 every 3 months
+- A4604 Climateline Tubing 1 every 3 months
+- A7038 Disposable Filter 2 every month
+---
+- A7039 Non-Disposable Filter 1 every 6 months
+- A7046 Water Chamber 1 every 6 months
+- A7035 Headgear 1 every 6 months
+- A7036 Chinstrap 1 every 6 months- 
+---
+- E0562 Heated Humidifier 1 every 5 years
+- E0601 CPAP 1 every 5 years
+- E0470 BIPAP 1 every 5 years
